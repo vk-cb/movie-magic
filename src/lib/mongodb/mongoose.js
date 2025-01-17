@@ -7,11 +7,7 @@ export const connect = async () => {
     return;
   }
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: 'movie-magic',
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.MONGODB_URI);
     initialized = true;
     console.log('MongoDB connected');
   } catch (error) {
